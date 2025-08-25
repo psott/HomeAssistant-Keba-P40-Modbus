@@ -1,0 +1,216 @@
+modbus:
+  - type: tcp
+    host: 192.168.1.41
+    port: 502
+    name: KebaP40
+    sensors:
+      - name: "Charging state (raw)"
+        slave: 255
+        data_type: uint32
+        address: 1004
+        unique_id: wallbox_charging_state_raw
+        scan_interval: 30
+
+      - name: "Cable state (raw)"
+        slave: 255
+        data_type: uint32
+        address: 1004
+        unique_id: wallbox_cable_state_raw
+        scan_interval: 30
+
+      - name: "Error Code"
+        slave: 255
+        data_type: uint32
+        address: 1006
+        unique_id: wallbox_error_code
+        scan_interval: 60
+
+      - name: "Current P1"
+        unique_id: wallbox_current_l1
+        address: 1008
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 3
+        unit_of_measurement: "A"
+        state_class: measurement
+        device_class: current
+
+      - name: "Current P2"
+        unique_id: wallbox_current_l2
+        address: 1010
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 3
+        unit_of_measurement: "A"
+        state_class: measurement
+        device_class: current
+
+      - name: "Current P3"
+        unique_id: wallbox_current_l3
+        address: 1012
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 3
+        unit_of_measurement: "A"
+        state_class: measurement
+        device_class: current
+    
+      - name: "Firmware Version"
+        slave: 255
+        data_type: uint32
+        address: 1018
+        unique_id: wallbox_firmware_version
+        scan_interval: 300
+    
+      - name: "Active Power"
+        unique_id: wallbox_active_power
+        address: 1020
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 0
+        unit_of_measurement: "W"
+        state_class: measurement
+        device_class: power
+    
+      - name: "Total Energy"
+        unique_id: wallbox_total_energy
+        address: 1036
+        scan_interval: 60
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 0
+        unit_of_measurement: "kWh"
+        state_class: total
+        device_class: energy
+    
+      - name: "Voltage P1"
+        unique_id: wallbox_voltage_l1
+        address: 1040
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 1
+        precision: 0
+        unit_of_measurement: "V"
+        state_class: measurement
+        device_class: voltage
+    
+      - name: "Voltage P2"
+        unique_id: wallbox_voltage_l2
+        address: 1042
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 1
+        precision: 0
+        unit_of_measurement: "V"
+        state_class: measurement
+        device_class: voltage
+    
+      - name: "Voltage P3"
+        unique_id: wallbox_voltage_l3
+        address: 1044
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 1
+        precision: 0
+        unit_of_measurement: "V"
+        state_class: measurement
+        device_class: voltage
+    
+      - name: "Power Factor"
+        unique_id: wallbox_power_factor
+        address: 1046
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 0.1
+        precision: 1
+        unit_of_measurement: "%"
+        state_class: measurement
+        device_class: power_factor
+    
+      - name: "Max Charging Current (per Phase)"
+        unique_id: wallbox_max_charging_current
+        address: 1100
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 3
+        unit_of_measurement: "A"
+        state_class: measurement
+        device_class: current
+    
+      - name: "Max Supported Current (pro Phase)"
+        unique_id: wallbox_max_supported_current
+        address: 1110
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 3
+        unit_of_measurement: "A"
+        state_class: measurement
+        device_class: current
+    
+      - name: "Fast Charging State (raw)"
+        slave: 255
+        data_type: uint16
+        address: 1200
+        unique_id: wallbox_fast_charging_state_raw
+    
+      - name: "Session Energy"
+        unique_id: wallbox_session_energy
+        address: 1502
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 1
+        unit_of_measurement: "kWh"
+        state_class: total
+        device_class: energy
+    
+      - name: "Phase Switching State (raw)"
+        unique_id: wallbox_phase_switching_state
+        address: 1552
+        scan_interval: 30
+        slave: 255
+        data_type: uint32
+    
+      - name: "Failsafe Current"
+        unique_id: wallbox_failsafe_current
+        address: 1600
+        scan_interval: 60
+        slave: 255
+        data_type: uint32
+        scale: 0.001
+        precision: 3
+        unit_of_measurement: "A"
+        state_class: measurement
+        device_class: current
+        
+      - name: "Charging Register"
+        unique_id: wallbox_charging_register
+        slave: 255
+        data_type: uint16
+        address: 5014
+        scan_interval: 15
+
+      - name: "Charging Current (per Phase)"
+        unique_id: wallbox_charging_current
+        slave: 255
+        data_type: uint16
+        address: 5004
+        scan_interval: 30
