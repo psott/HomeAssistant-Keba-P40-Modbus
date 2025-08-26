@@ -86,8 +86,8 @@ modbus:
         scan_interval: 60
         slave: 255
         data_type: uint32
-        scale: 0.001
-        precision: 0
+        scale: 0.0001
+        precision: 4
         unit_of_measurement: "kWh"
         state_class: total
         device_class: energy
@@ -176,8 +176,8 @@ modbus:
         scan_interval: 30
         slave: 255
         data_type: uint32
-        scale: 0.001
-        precision: 1
+        scale: 0.0001
+        precision: 4
         unit_of_measurement: "kWh"
         state_class: total
         device_class: energy
